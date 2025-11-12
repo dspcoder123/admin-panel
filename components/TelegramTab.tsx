@@ -18,7 +18,7 @@ export default function TelegramTab() {
         setIsLoading(true);
 
         try {
-            const apiUrl = process.env.NEXT_LOCAL_API_URL;
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
             const response = await fetch(`${apiUrl}/telegram/send`, {
                 method: "POST",
                 headers: {

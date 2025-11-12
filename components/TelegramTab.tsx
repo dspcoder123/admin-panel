@@ -18,7 +18,7 @@ export default function TelegramTab() {
         setIsLoading(true);
 
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+            const apiUrl = process.env.NEXT_LOCAL_API_URL;
             const response = await fetch(`${apiUrl}/telegram/send`, {
                 method: "POST",
                 headers: {
@@ -94,8 +94,8 @@ export default function TelegramTab() {
                                     type="submit"
                                     disabled={isLoading || !message.trim()}
                                     className={`flex-1 px-6 py-3 rounded-lg font-bold text-white transition-all duration-200 flex items-center justify-center gap-2 ${isLoading || !message.trim()
-                                            ? "bg-gray-400 cursor-not-allowed"
-                                            : "bg-purple-600 hover:bg-purple-700 active:scale-95 shadow-lg hover:shadow-xl"
+                                        ? "bg-gray-400 cursor-not-allowed"
+                                        : "bg-purple-600 hover:bg-purple-700 active:scale-95 shadow-lg hover:shadow-xl"
                                         }`}
                                 >
                                     {isLoading ? (

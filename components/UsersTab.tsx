@@ -28,9 +28,11 @@ export default function UsersTab() {
     const fetchUsers = async () => {
         setLoading(true);
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-            const res = await fetch(`${apiUrl}/users?verified=true`);
-            if (!res.ok) throw new Error("Failed to fetch users");
+            const apiUrl = (process.env.NEXT_PUBLIC_API_URL as string) || "";
+            const base = apiUrl || "/api";
+            const fetchUrl = `${base}/users?verified=true`;
+            const res = await fetch(fetchUrl);
+            if (!res.ok) throw new Error(`Failed to fetch users (${res.status}) from ${fetchUrl}`);
             const data = await res.json();
 
             // Normalize response into an array of users.

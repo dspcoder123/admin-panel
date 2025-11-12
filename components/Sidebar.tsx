@@ -21,6 +21,7 @@ export default function Sidebar({ activeTab, onTabChange, isCollapsed, setIsColl
         { id: "home", label: "Home", icon: "🏠" },
         { id: "telegram", label: "Telegram Channel", icon: "📱" },
         { id: "users", label: "Users", icon: "👥" },
+        { id: "visits", label: "Visits", icon: "📊" },
     ];
 
     return (

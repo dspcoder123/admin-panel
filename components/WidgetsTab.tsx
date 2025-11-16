@@ -120,10 +120,7 @@ export default function WidgetsTab() {
       visitCategory: form.visitCategory ?? selectedCat,
       visitId: Number(form.visitId) // Always submit as number!
     };
-    Object.keys(payload).forEach(
-      (key) => (payload[key] === undefined || payload[key] === null) && delete payload[key]
-    );
-    console.log("Submitting Widget Payload:", payload);
+    
 
     try {
       const res = await fetch(url, {

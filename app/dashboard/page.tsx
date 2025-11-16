@@ -6,6 +6,7 @@ import HomeTab from "@/components/HomeTab";
 import TelegramTab from "@/components/TelegramTab";
 import UsersTab from "@/components/UsersTab";
 import VisitsTab from "@/components/VisitsTab";
+import WidgetsTab from "@/components/WidgetsTab";
 
 export default function DashboardPage() {
     const [activeTab, setActiveTab] = useState("home");
@@ -31,6 +32,7 @@ export default function DashboardPage() {
                             {activeTab === "telegram" && "Telegram Channel"}
                             {activeTab === "users" && "Users"}
                             {activeTab === "visits" && "Visits"}
+                            {activeTab === "widgets" && "Widgets"}
                         </h1>
                         <div className="text-sm text-gray-600">
                             Welcome to Admin Panel • {new Date().toISOString().slice(0, 10)}
@@ -44,6 +46,7 @@ export default function DashboardPage() {
                     {activeTab === "telegram" && <TelegramTab />}
                     {activeTab === "users" && <UsersTab />}
                     {activeTab === "visits" && <VisitsTab />}
+                    {activeTab === "widgets" && <WidgetsTab />}
                 </div>
             </div>
         </div>
